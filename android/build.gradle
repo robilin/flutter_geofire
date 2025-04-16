@@ -19,11 +19,11 @@ apply plugin: 'com.android.library'
 
 android {
     namespace "in.appyflow.geofire"  // Matches your plugin's Java package
-    compileSdkVersion 33            // Recommend using an up-to-date SDK
+    compileSdkVersion 34            // Recommend using an up-to-date SDK
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 33
+        minSdkVersion 23
+        targetSdkVersion 34
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
