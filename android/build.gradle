@@ -1,39 +1,44 @@
-group 'in.appyflow.geofire'
-version '1.0-SNAPSHOT'
+// If you plan to publish this library, you can keep your group and version here.
+// group 'in.appyflow.geofire'
+// version '1.0-SNAPSHOT'
 
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        // jcenter()  // If absolutely required, uncomment
     }
-
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.3'
+        // Use a modern AGP version (7.3.1, 7.4.2, etc.)
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
 
-rootProject.allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
+// We apply the library plugin here
 apply plugin: 'com.android.library'
 
 android {
-    namespace "in.appyflow.geofire"
-    compileSdkVersion 28
+    namespace "in.appyflow.geofire"  // Matches your plugin's Java package
+    compileSdkVersion 33            // Recommend using an up-to-date SDK
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 19
+        targetSdkVersion 33
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    // For Gradle versions <8.0, you can keep this:
     lintOptions {
         disable 'InvalidPackage'
     }
 }
 
+// Repositories for dependencies
+repositories {
+    google()
+    mavenCentral()
+    // jcenter()  // If absolutely required, uncomment
+}
 
 dependencies {
     implementation 'com.firebase:geofire-android:3.1.0'
